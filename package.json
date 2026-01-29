@@ -1,0 +1,44 @@
+{
+  "name": "authentication",
+  "version": "1.0.0",
+  "description": "\"This all about authentication\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chukwutem-emi/Authentication.git"
+  },
+  "keywords": [
+    "\"Authentication\""
+  ],
+  "author": "Chukwutem Stephen Emi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chukwutem-emi/Authentication/issues"
+  },
+  "homepage": "https://github.com/chukwutem-emi/Authentication#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^2.2.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^5.0.0",
+    "csurf": "^1.11.0",
+    "dotenv": "^17.2.3",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "express-validator": "^7.3.1",
+    "mailtrap": "^4.4.0",
+    "mongoose": "^9.1.5",
+    "multer": "^2.0.2",
+    "mysql2": "^3.16.1",
+    "nodemailer": "^7.0.12",
+    "pdfkit": "^0.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
