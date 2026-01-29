@@ -245,10 +245,26 @@ form {
   background: rgb(229, 198, 193);
   color: red;
 }
-
+.pagination {
+  text-align: center;
+  margin-top: 2rem;
+}
+.pagination a {
+  text-decoration: none;
+  color: green;
+}
+.pagination a:hover,
+.pagination a:active,
+.pagination a.active {
+  background: green;
+  color: white;
+}
 @media (min-width: 768px) {
   .main-header__nav {
     display: flex;
+    padding: 0.5rem;
+    border: 1px solid green;
+    margin: 0 1rem;
   }
 
   #side-menu-toggle {
