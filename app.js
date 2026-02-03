@@ -10,6 +10,9 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 const multer = require("multer");
+const helmet = require("helmet");
+const compression = require("compression");
+const morgan = require("morgan");
 
 const app = express();
 require("dotenv").config();
@@ -50,6 +53,15 @@ const fileFilter = (req, file, cb) => {
     cb(null, false);
   }
 };
+
+const accessLogStream = fs.createWriteStream(path.join(__dirname, "access.log"), {flags: "a"});
+
+app.use(helmet());
+app.use(compression());
+app.use(morgan("combined", {stream: accessLogStream}));
+
+
+
 // Parsing is the process of turning one form of data (usually a string of text or numbers or whatever) into a data structure.
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -107,7 +119,7 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(process.env.DATABASE_CONFIG)
   .then(result => {
-  app.listen(3000);
+  app.listen(process.env.PORT || 3000);
   })
   .catch(err => {
     console.log(err);
